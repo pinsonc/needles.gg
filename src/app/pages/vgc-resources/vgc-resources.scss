@@ -1,0 +1,116 @@
+$neon-cyan: #00f0ff;
+$neon-pink: #ff2d95;
+$neon-green: #39ff14;
+$neon-yellow: #ffe600;
+$text-primary: #edf0ff;
+$text-muted: #8892b0;
+
+@use 'sass:list';
+
+$category-colors: $neon-cyan, $neon-pink, $neon-green, $neon-yellow, $neon-cyan;
+
+.resources-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 4rem 2rem 3rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-shadow: 0 0 20px rgba($neon-cyan, 0.4);
+    margin: 0 0 0.5rem;
+  }
+
+  p {
+    color: $text-muted;
+    font-size: 1.05rem;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+}
+
+.category {
+  margin-bottom: 2.5rem;
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i + 1}) h2 {
+      $c: list.nth($category-colors, $i);
+      color: $c;
+      border-bottom-color: rgba($c, 0.2);
+      text-shadow: 0 0 10px rgba($c, 0.3);
+    }
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.75rem;
+}
+
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem;
+  border-radius: 10px;
+  background: rgba(10, 14, 28, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: rgba($neon-cyan, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba($neon-cyan, 0.1), 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    .resource-link {
+      color: $neon-cyan;
+      text-shadow: 0 0 6px rgba($neon-cyan, 0.4);
+    }
+  }
+}
+
+.resource-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: $text-primary;
+}
+
+.resource-desc {
+  font-size: 0.82rem;
+  color: $text-muted;
+  line-height: 1.45;
+}
+
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 0.25rem;
+  transition: all 0.25s;
+}

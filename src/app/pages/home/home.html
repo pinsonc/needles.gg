@@ -1,0 +1,42 @@
+<section class="home">
+  <h1 class="title">needles.gg</h1>
+  <p class="subtitle">Find me on socials</p>
+
+  <div class="social-grid">
+    @for (social of socials; track social.name) {
+      <a
+        class="social-card"
+        [href]="social.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        [style.--accent]="social.color"
+      >
+        <div class="icon-wrapper">
+          @switch (social.icon) {
+            @case ('youtube') {
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            }
+            @case ('twitch') {
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/>
+              </svg>
+            }
+            @case ('bluesky') {
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.785 2.627 3.6 3.476 6.158 3.12-4.09.57-7.658 2.472-4.24 7.028C5.14 23.552 8.577 20.763 12 16.39c3.423 4.374 6.706 7.043 9.458 4.004 3.418-4.556-.15-6.458-4.24-7.028 2.558.356 5.373-.493 6.158-3.12.246-.828.624-5.789.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/>
+              </svg>
+            }
+            @case ('tumblr') {
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 10.068 0h3.504v6.094h4.453v3.653h-4.453v7.248c0 1.624.645 2.524 2.099 2.524.741 0 1.347-.152 1.858-.371l1.448 3.406c-.493.47-2.066 1.275-4.414 1.446z"/>
+              </svg>
+            }
+          }
+        </div>
+        <span class="social-name">{{ social.name }}</span>
+      </a>
+    }
+  </div>
+</section>

@@ -1,0 +1,29 @@
+@if (entry(); as post) {
+  <article class="blog-post">
+    <a class="back-link" routerLink="/blog">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to Blog
+    </a>
+
+    <div class="post-panel">
+      <header>
+        <div class="meta">
+          <time>{{ post.date }}</time>
+          <div class="tags">
+            @for (tag of post.tags; track tag) {
+              <span class="tag">{{ tag }}</span>
+            }
+          </div>
+        </div>
+        <h1>{{ post.title }}</h1>
+      </header>
+
+      <div class="content" [innerHTML]="post.content"></div>
+    </div>
+  </article>
+} @else {
+  <section class="not-found">
+    <h1>Post not found</h1>
+    <a routerLink="/blog">Back to Blog</a>
+  </section>
+}

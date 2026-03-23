@@ -1,0 +1,11 @@
+<div class="video-bg">
+  <video #bgVideo autoplay muted loop playsinline poster="bg-fallback.png">
+    <source src="bg.mp4" type="video/mp4" />
+  </video>
+  <div class="video-overlay"></div>
+</div>
+
+<app-sidebar />
+<main>
+  <router-outlet />
+</main>

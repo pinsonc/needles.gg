@@ -1,0 +1,102 @@
+$neon-cyan: #00f0ff;
+$neon-pink: #ff2d95;
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 0 10px rgba($neon-cyan, 0.8),
+    0 0 40px rgba($neon-cyan, 0.4),
+    0 0 80px rgba($neon-cyan, 0.2);
+  margin: 0 0 0.25rem;
+}
+
+.subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  color: rgba(#fff, 0.5);
+  font-size: 1.05rem;
+  margin: 0 0 3rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.25rem;
+  max-width: 660px;
+  width: 100%;
+}
+
+.social-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem 1.5rem;
+  border-radius: 14px;
+  background: rgba(10, 14, 28, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  color: rgba(#fff, 0.7);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--accent);
+    box-shadow:
+      0 0 15px color-mix(in srgb, var(--accent) 30%, transparent),
+      0 0 40px color-mix(in srgb, var(--accent) 15%, transparent),
+      inset 0 0 20px color-mix(in srgb, var(--accent) 5%, transparent);
+
+    .icon-wrapper {
+      color: var(--accent);
+      filter: drop-shadow(0 0 8px var(--accent));
+    }
+
+    .social-name {
+      color: #fff;
+      text-shadow: 0 0 8px color-mix(in srgb, var(--accent) 50%, transparent);
+    }
+  }
+}
+
+.icon-wrapper {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(#fff, 0.5);
+  transition: all 0.3s ease;
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.social-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
