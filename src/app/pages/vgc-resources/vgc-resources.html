@@ -4,8 +4,20 @@
     <p>Shortlist of tools and websites for VGC.</p>
   </header>
 
-  @for (category of categories; track category.title) {
-    <div class="category">
+  <nav class="category-nav">
+    @for (category of categories; track category.title; let i = $index) {
+      <button
+        class="category-chip"
+        [style.--chip-color]="categoryColor(i)"
+        (click)="scrollTo(category.title)"
+      >
+        {{ category.title }}
+      </button>
+    }
+  </nav>
+
+  @for (category of categories; track category.title; let i = $index) {
+    <div class="category" [id]="categoryId(category.title)" [style.--cat-color]="categoryColor(i)">
       <h2>{{ category.title }}</h2>
       <div class="resource-grid">
         @for (resource of category.resources; track resource.name) {

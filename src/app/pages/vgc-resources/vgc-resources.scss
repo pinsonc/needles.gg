@@ -5,10 +5,6 @@ $neon-yellow: #ffe600;
 $text-primary: #edf0ff;
 $text-muted: #8892b0;
 
-@use 'sass:list';
-
-$category-colors: $neon-cyan, $neon-pink, $neon-green, $neon-yellow, $neon-cyan;
-
 .resources-page {
   max-width: 860px;
   margin: 0 auto;
@@ -39,26 +35,48 @@ $category-colors: $neon-cyan, $neon-pink, $neon-green, $neon-yellow, $neon-cyan;
   }
 }
 
-.category {
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
   margin-bottom: 2.5rem;
+}
 
-  @for $i from 1 through 5 {
-    &:nth-child(#{$i + 1}) h2 {
-      $c: list.nth($category-colors, $i);
-      color: $c;
-      border-bottom-color: rgba($c, 0.2);
-      text-shadow: 0 0 10px rgba($c, 0.3);
-    }
+.category-chip {
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid color-mix(in srgb, var(--chip-color) 30%, transparent);
+  background: color-mix(in srgb, var(--chip-color) 8%, transparent);
+  color: var(--chip-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: color-mix(in srgb, var(--chip-color) 18%, transparent);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--chip-color) 25%, transparent);
   }
+}
+
+.category {
+  scroll-margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
 
   h2 {
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0 0 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid color-mix(in srgb, var(--cat-color) 20%, transparent);
     text-transform: uppercase;
     letter-spacing: 0.06em;
+    color: var(--cat-color);
+    text-shadow: 0 0 10px color-mix(in srgb, var(--cat-color) 30%, transparent);
   }
 }
 

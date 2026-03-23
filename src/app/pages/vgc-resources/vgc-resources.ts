@@ -17,22 +17,29 @@ interface ResourceCategory {
   styleUrl: './vgc-resources.scss',
 })
 export class VgcResources {
+  private readonly neonPalette = [
+    '#00f0ff', // cyan
+    '#ff2d95', // pink
+    '#39ff14', // green
+    '#ffe600', // yellow
+    '#4d6dff', // blue
+    '#ff6b35', // orange
+    '#c77dff', // lavender
+  ];
+
+  categoryColor(index: number): string {
+    return this.neonPalette[index % this.neonPalette.length];
+  }
+
+  categoryId(title: string): string {
+    return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  }
+
+  scrollTo(title: string): void {
+    document.getElementById(this.categoryId(title))?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   readonly categories: ResourceCategory[] = [
-    {
-      title: 'Teambuilding & Practice',
-      resources: [
-        {
-          name: 'Pokémon Showdown',
-          url: 'https://play.pokemonshowdown.com',
-          description: 'Battle simulator for testing teams online.',
-        },
-        {
-          name: 'PokéPaste',
-          url: 'https://pokepast.es',
-          description: 'Share and browse Pokémon team pastes.',
-        },
-      ],
-    },
     {
       title: 'Team Repositories',
       resources: [
@@ -45,7 +52,12 @@ export class VgcResources {
           name: 'Victory Road Repository',
           url: 'https://victoryroad.pro/sv-rental-teams/',
           description: 'Repository for the current regulation with links to previous ones.',
-        }
+        },
+        {
+          name: 'PokéPaste',
+          url: 'https://pokepast.es',
+          description: 'Share and browse Pokémon team pastes.',
+        },
       ],
     },
     {
@@ -69,7 +81,27 @@ export class VgcResources {
       ],
     },
     {
-      title: 'Community & Learning',
+      title: 'Smogon Resources',
+      resources: [
+        {
+          name: 'Pokémon Showdown',
+          url: 'https://play.pokemonshowdown.com',
+          description: 'The premiere destination for teambuilding, practice, and occasional tournament play.',
+        },
+        {
+          name: 'Smogon Forums',
+          url: 'https://www.smogon.com/forums/forums/video-game-championships.513/',
+          description: 'Discuss different formats, talk team building, and browse meta discussions.',
+        },
+        {
+          name: 'Smogon Strategy Dex',
+          url: 'https://www.smogon.com/dex/sv/pokemon/',
+          description: 'List of most Pokémon and their recommended sets for given formats.',
+        }
+      ],
+    },
+    {
+      title: 'Community',
       resources: [
         {
           name: 'r/VGC',
@@ -77,14 +109,9 @@ export class VgcResources {
           description: 'Reddit community for VGC discussion and advice.',
         },
         {
-          name: 'Smogon VGC Forum',
-          url: 'https://www.smogon.com/forums/forums/vgc.Pokemon-doubles/',
-          description: 'In-depth discussion and metagame analysis.',
-        },
-        {
-          name: 'U.S. Pokemon Association Discord',
-          url: 'https://discord.com/invite/smU4msuvYT',
-          description: 'Find a local VGC community and get help with your team.',
+          name: 'U.S. Pokemon Association',
+          url: 'https://www.usvgc.com/',
+          description: 'Find a local VGC community and participate in events.',
         }
       ],
     },
@@ -120,11 +147,6 @@ export class VgcResources {
           name: 'Limitless TCG',
           url: 'https://play.limitlesstcg.com/tournaments/?game=VGC',
           description: 'Grassroots Pokémon tournaments on Showdown and Cartridge.',
-        },
-        {
-          name: 'Pikalytics',
-          url: 'https://pikalytics.com',
-          description: 'Usage stats, common spreads, and metagame trends.',
         },
       ],
     },
