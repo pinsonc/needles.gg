@@ -83,37 +83,47 @@ header {
   font-size: 1rem;
   line-height: 1.8;
 
-  p {
-    margin: 0 0 1.25rem;
-  }
-
-  a {
-    color: #0066cc;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-
-    &:hover {
-      color: #0044aa;
+  ::ng-deep {
+    p {
+      margin: 0 0 1.25rem;
     }
-  }
 
-  h2, h3 {
-    color: #1a1a2e;
-    margin: 2rem 0 0.75rem;
-  }
+    a {
+      color: $neon-pink;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
 
-  ul, ol {
-    padding-left: 1.5rem;
-    margin: 0 0 1.25rem;
-    color: #333;
-  }
+      &:hover {
+        color: darken($neon-pink, 12%);
+      }
+    }
 
-  code {
-    background: rgba(0, 0, 0, 0.06);
-    padding: 0.15rem 0.4rem;
-    border-radius: 4px;
-    font-size: 0.9em;
-    color: #c7254e;
+    h2, h3 {
+      color: #1a1a2e;
+      margin: 2rem 0 0.75rem;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+      margin: 0 0 1.25rem;
+      color: #333;
+    }
+
+    code {
+      background: rgba(0, 0, 0, 0.06);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+      color: #c7254e;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 0.5rem 0 1.25rem;
+    }
   }
 }
 
