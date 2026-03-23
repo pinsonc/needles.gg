@@ -61,7 +61,7 @@ export class VgcResources {
       ],
     },
     {
-      title: 'Damage Calculators',
+      title: 'Damage Calculators and Other Planning Tools',
       resources: [
         {
           name: 'Pokémon Damage Calculator',
@@ -77,6 +77,11 @@ export class VgcResources {
           name: 'Showdex Damage Calculator',
           url: 'https://chromewebstore.google.com/detail/showdex/dabpnahpcemkfbgfbmegmncjllieilai',
           description: 'A Showdown damage calc Chrome extension that syncs with the current game state.',
+        },
+        {
+          name: 'SPAMS by SableyeVGC',
+          url: 'https://docs.google.com/spreadsheets/d/1BKellYGd_BlMJYFihWYqKREKzRh4ON94SerfFv04yMA/edit?usp=sharing',
+          description: 'Sableye\'s Planning and Analysis of Matchups Spreadsheet: Tool to organize and analyze matchups.',
         }
       ],
     },
