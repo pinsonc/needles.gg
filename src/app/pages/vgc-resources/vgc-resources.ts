@@ -56,7 +56,7 @@ export class VgcResources {
         {
           name: 'PokéPaste',
           url: 'https://pokepast.es',
-          description: 'Share and browse Pokémon team pastes.',
+          description: 'Share Pokémon team pastes that can be generated on Showdown.',
         },
       ],
     },

@@ -1,7 +1,7 @@
 $neon-cyan: #00f0ff;
 $neon-pink: #ff2d95;
 $text-primary: #edf0ff;
-$text-muted: #8892b0;
+$text-muted: #95a3c4;
 
 .blog-page {
   max-width: 720px;
@@ -41,9 +41,9 @@ $text-muted: #8892b0;
   display: block;
   padding: 1.5rem;
   border-radius: 10px;
-  background: rgba(10, 14, 28, 0.6);
+  background: rgba(20, 28, 46, 0.62);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   text-decoration: none;
   transition: all 0.25s ease;
 
@@ -80,12 +80,90 @@ $text-muted: #8892b0;
   }
 }
 
+.tag-filters-panel {
+  margin-bottom: 2rem;
+}
+
+.tag-filters-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.55rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(20, 28, 46, 0.58);
+  backdrop-filter: blur(8px);
+  color: $text-muted;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    border-color: rgba($neon-pink, 0.28);
+    color: $text-primary;
+  }
+}
+
+.tag-filters-toggle-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.6rem;
+  min-width: 0;
+}
+
+.tag-filters-active-hint {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  border: 1px solid color-mix(in srgb, var(--chip-color) 35%, transparent);
+  background: color-mix(in srgb, var(--chip-color) 12%, transparent);
+  color: var(--chip-color);
+}
+
+.tag-filters-chevron {
+  flex-shrink: 0;
+  opacity: 0.75;
+  transition: transform 0.28s ease, opacity 0.2s ease;
+
+  &.expanded {
+    transform: rotate(180deg);
+  }
+}
+
+.tag-filters-toggle:hover .tag-filters-chevron {
+  opacity: 1;
+}
+
+.tag-filters-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+
+  &.open {
+    grid-template-rows: 1fr;
+  }
+}
+
+.tag-filters-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
 .tag-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: center;
-  margin-bottom: 2rem;
+  padding-top: 0.85rem;
 }
 
 .tag-filter-chip {

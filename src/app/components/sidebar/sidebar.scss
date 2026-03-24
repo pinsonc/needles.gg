@@ -2,7 +2,7 @@ $sidebar-width: 280px;
 $neon-cyan: #00f0ff;
 $neon-pink: #ff2d95;
 $text-primary: #edf0ff;
-$text-muted: #8892b0;
+$text-muted: #95a3c4;
 $transition-speed: 0.3s;
 
 .hamburger {
@@ -60,7 +60,7 @@ $transition-speed: 0.3s;
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(5, 8, 18, 0.6);
+  background: rgba(8, 12, 24, 0.52);
   z-index: 1000;
   opacity: 0;
   pointer-events: none;
@@ -79,7 +79,7 @@ $transition-speed: 0.3s;
   left: 0;
   width: $sidebar-width;
   height: 100vh;
-  background: rgba(8, 11, 22, 0.85);
+  background: rgba(17, 24, 42, 0.84);
   backdrop-filter: blur(20px);
   z-index: 1050;
   transform: translateX(-100%);

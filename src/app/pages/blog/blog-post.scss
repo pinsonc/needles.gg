@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $neon-cyan: #00f0ff;
 $neon-pink: #ff2d95;
 
@@ -103,7 +105,7 @@ header {
       transition: color 0.2s;
 
       &:hover {
-        color: darken($neon-pink, 12%);
+        color: color.adjust($neon-pink, $lightness: -12%);
       }
     }
 

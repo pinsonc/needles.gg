@@ -4,28 +4,73 @@
     <p>Thoughts, team reports, and tournament recaps.</p>
   </header>
 
-  <nav class="tag-filters" aria-label="Filter posts by tag">
+  <div class="tag-filters-panel">
     <button
       type="button"
-      class="tag-filter-chip"
-      [class.active]="selectedTag() === null"
-      [style.--chip-color]="'#8892b0'"
-      (click)="selectedTag.set(null)"
+      class="tag-filters-toggle"
+      [attr.aria-expanded]="filtersExpanded()"
+      aria-controls="blog-tag-filters"
+      (click)="filtersExpanded.update((v) => !v)"
     >
-      All
-    </button>
-    @for (tag of filterTags; track tag) {
-      <button
-        type="button"
-        class="tag-filter-chip"
-        [class.active]="selectedTag() === tag"
-        [style.--chip-color]="tagColor(tag)"
-        (click)="selectedTag.set(tag)"
+      <span class="tag-filters-toggle-text">
+        Filter by tag
+        @if (selectedTag(); as active) {
+          <span
+            class="tag-filters-active-hint"
+            [style.--chip-color]="tagColor(active)"
+            >{{ active }}</span>
+        }
+      </span>
+      <svg
+        class="tag-filters-chevron"
+        [class.expanded]="filtersExpanded()"
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
       >
-        {{ tag }}
-      </button>
-    }
-  </nav>
+        <path d="M6 9l6 6 6-6" />
+      </svg>
+    </button>
+
+    <div
+      id="blog-tag-filters"
+      class="tag-filters-collapse"
+      [class.open]="filtersExpanded()"
+      [attr.inert]="filtersExpanded() ? null : ''"
+    >
+      <div class="tag-filters-inner">
+        <nav class="tag-filters" aria-label="Filter posts by tag">
+          <button
+            type="button"
+            class="tag-filter-chip"
+            [class.active]="selectedTag() === null"
+            [style.--chip-color]="'#8892b0'"
+            (click)="selectedTag.set(null)"
+          >
+            All
+          </button>
+          @for (tag of filterTags; track tag) {
+            <button
+              type="button"
+              class="tag-filter-chip"
+              [class.active]="selectedTag() === tag"
+              [style.--chip-color]="tagColor(tag)"
+              (click)="selectedTag.set(tag)"
+            >
+              {{ tag }}
+            </button>
+          }
+        </nav>
+      </div>
+    </div>
+  </div>
 
   <div class="entries">
     @for (entry of filteredEntries(); track entry.slug) {

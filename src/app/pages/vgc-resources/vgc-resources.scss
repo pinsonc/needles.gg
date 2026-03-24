@@ -3,7 +3,7 @@ $neon-pink: #ff2d95;
 $neon-green: #39ff14;
 $neon-yellow: #ffe600;
 $text-primary: #edf0ff;
-$text-muted: #8892b0;
+$text-muted: #95a3c4;
 
 .resources-page {
   max-width: 860px;
@@ -96,9 +96,9 @@ $text-muted: #8892b0;
   gap: 0.35rem;
   padding: 1.25rem;
   border-radius: 10px;
-  background: rgba(10, 14, 28, 0.6);
+  background: rgba(20, 28, 46, 0.62);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   text-decoration: none;
   transition: all 0.25s ease;
 

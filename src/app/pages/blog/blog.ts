@@ -15,6 +15,7 @@ export class Blog {
   readonly tagColor = blogTagColor;
 
   readonly selectedTag = signal<string | null>(null);
+  readonly filtersExpanded = signal(false);
 
   readonly filteredEntries = computed(() => {
     const tag = this.selectedTag();

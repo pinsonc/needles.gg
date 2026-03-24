@@ -15,6 +15,9 @@ export const BLOG_TAG_COLORS: Record<string, string> = {
   regionals: '#fbbf24',
   internationals: '#0ea5e9',
   worlds: '#d946ef',
+  online: '#818cf8',
+  youtube: '#ff3040',
+  twitch: '#9146ff',
 };
 
 /** Display order for filter chips; mirrors known tags above. */
