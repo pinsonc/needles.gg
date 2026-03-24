@@ -17,7 +17,7 @@ export const BLOG_ENTRIES: BlogEntry[] = [
     title: 'What to Expect at your First VGC Tournament',
     date: '2026-03-23',
     summary: 'How to navigate your first official in-person VGC tournament.',
-    tags: ['announcement'],
+    tags: ['tournament', 'official', 'locals', 'guide', 'personal'],
     content: `
       <p>Last weekend I attended my first League Challenge VGC tournament at <a href="https://www.gaminggiant.com/" target="_blank" rel="noopener noreferrer">Gaming Giant</a> in Fairfax, VA.
       I have been going to them for a while for trading cards and when I found out they did VGC too, I thought

@@ -4,20 +4,49 @@
     <p>Thoughts, team reports, and tournament recaps.</p>
   </header>
 
+  <nav class="tag-filters" aria-label="Filter posts by tag">
+    <button
+      type="button"
+      class="tag-filter-chip"
+      [class.active]="selectedTag() === null"
+      [style.--chip-color]="'#8892b0'"
+      (click)="selectedTag.set(null)"
+    >
+      All
+    </button>
+    @for (tag of filterTags; track tag) {
+      <button
+        type="button"
+        class="tag-filter-chip"
+        [class.active]="selectedTag() === tag"
+        [style.--chip-color]="tagColor(tag)"
+        (click)="selectedTag.set(tag)"
+      >
+        {{ tag }}
+      </button>
+    }
+  </nav>
+
   <div class="entries">
-    @for (entry of entries; track entry.slug) {
+    @for (entry of filteredEntries(); track entry.slug) {
       <a class="entry-card" [routerLink]="['/blog', entry.slug]">
         <div class="entry-meta">
           <time>{{ entry.date }}</time>
           <div class="tags">
             @for (tag of entry.tags; track tag) {
-              <span class="tag">{{ tag }}</span>
+              <span class="tag" [style.--tag-color]="tagColor(tag)">{{ tag }}</span>
             }
           </div>
         </div>
         <h2>{{ entry.title }}</h2>
         <p>{{ entry.summary }}</p>
       </a>
+    } @empty {
+      @if (selectedTag()) {
+        <p class="empty-filter">No posts with this tag yet.</p>
+      } @else {
+        <p class="empty-filter">No posts yet.</p>
+      }
     }
   </div>
 </section>

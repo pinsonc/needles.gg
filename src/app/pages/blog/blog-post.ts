@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { BLOG_ENTRIES, BlogEntry } from './blog-data';
+import { blogTagColor } from './blog-tags';
 
 @Component({
   selector: 'app-blog-post',
@@ -11,6 +12,8 @@ import { BLOG_ENTRIES, BlogEntry } from './blog-data';
   styleUrl: './blog-post.scss',
 })
 export class BlogPost {
+  readonly tagColor = blogTagColor;
+
   private route = inject(ActivatedRoute);
 
   private slug = toSignal(

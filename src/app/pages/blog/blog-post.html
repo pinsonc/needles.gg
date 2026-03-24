@@ -11,7 +11,7 @@
           <time>{{ post.date }}</time>
           <div class="tags">
             @for (tag of post.tags; track tag) {
-              <span class="tag">{{ tag }}</span>
+              <span class="tag" [style.--tag-color]="tagColor(tag)">{{ tag }}</span>
             }
           </div>
         </div>

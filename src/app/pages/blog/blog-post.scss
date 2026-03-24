@@ -72,10 +72,11 @@ header {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #fff;
-  background: $neon-pink;
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
+  color: color-mix(in srgb, var(--tag-color) 85%, #1a1a2e);
+  background: color-mix(in srgb, var(--tag-color) 14%, white);
+  border: 1px solid color-mix(in srgb, var(--tag-color) 40%, transparent);
 }
 
 .content {
