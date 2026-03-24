@@ -13,6 +13,29 @@ export interface BlogEntry {
  */
 export const BLOG_ENTRIES: BlogEntry[] = [
   {
+    slug: 'how-to-prepare-an-open-team-sheet',
+    title: 'How to Prepare an Open Team Sheet',
+    date: '2026-03-24',
+    summary: 'Everything you need to know about Open Team Sheets.',
+    tags: ['official', 'guide'],
+    content: `
+      <p>When I was prepping for my first tournament, I knew Open Team Sheets existed but I wasn’t sure how they worked exactly. All I had to go on was the PDF from the official website. I tried Googling around but it was hard to find a real example.
+      So here I’m going to give a quick “Idiot’s Guide” I wish I had to refer to when I was prepping my own sheet.</p>
+      <h2>What is an Open Team Sheet?</h2>
+      <p>The current competitive format uses “Open Team Sheets” and has since Scarlet and Violet released. These are documents that detail your team that your opponent will have access to during your match.This provides some crucial information such
+      as movesets, tera types, and movesets that you can use to make informed decisions during the match. Only the tournament organizer will know your exact stat spreads in order to check for invalid Pokemon sets.</p>
+      <p>Note that an error in your Open Team Sheet can lead to tournament infractions as minor as a warning to as severe as a game loss.</p>
+      <h2>How to Prepare an Open Team Sheet</h2>
+      <h3>Player Information</h3>
+      <p><b>Player Name:</b> Your name.</p>
+      <ul><li>This should probably match what is on your Play! Pokemon Trainer Profile.</li></ul>
+      <p><b>Trainer Name In Game:</b> Your name in Pokemon Scarlet or Violet.</p>
+      <ul><li>If you are coming back to the game for the first time in a while and are unsure, you can check your Trainer Profile in game. In this case the name would be “Serebii”.</li></ul>
+      <img src="blog/profile1.jpg" alt="Trainer Profile as it appears in game" />
+
+    `,
+  },
+  {
     slug: 'the-first-tournament',
     title: 'What to Expect at your First VGC Tournament',
     date: '2026-03-23',

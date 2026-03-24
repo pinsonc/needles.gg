@@ -18,6 +18,7 @@ export const BLOG_TAG_COLORS: Record<string, string> = {
   online: '#818cf8',
   youtube: '#ff3040',
   twitch: '#9146ff',
+  'team-building': '#f59e0b',
 };
 
 /** Display order for filter chips; mirrors known tags above. */
