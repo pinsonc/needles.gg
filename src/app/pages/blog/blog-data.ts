@@ -41,7 +41,7 @@ export const BLOG_ENTRIES: BlogEntry[] = [
       <p>The main difference between a League Challenge and a Cup is the amount of Championship Points awarded. Also, each Play! Pokemon partner store can only host one Cup a season (3-month period)
       In practice, this means that Cups tend to be more competitive and have more entrants attempting to get their hands on the most points. Expect to see very competitive, meta teams with people trying to win.</p>
       <img src="blog/league-cup-points.png" alt="League Challenge vs Cup" />
-      <p>You may think you are at an advantage if you go to a ton of cups and challenges at a ton of different stores, but there is a safety guard in that called the Best Finish Limit. This means that only your
+      <p>You may think you are at an advantage if you go to a ton of cups and challenges at a ton of different stores, but there is a safety guard for that called the Best Finish Limit. This means that only your
       top 4 best finishes count towards your total championship points. So if you win 4 Challenges, you don't get any more points for attending more. But it also means you can attempt to improve your record as much
       as you want by going to more tournaments.</p>
       <h2>Before You Arrive</h2>
